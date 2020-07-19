@@ -20,15 +20,15 @@ $text = $_POST['mssg'];
 
 //now the message that will be sent to the email
 
-$message = "<strong> Name: </strong" .$name;
-$message .= "<strong> Message: </strong>" .$text;
-$message .= "<strong> Email: </strong>" .$email;
-$message .= "<strong> Phone: </strong>" .$phone
+$message = "<br><strong> Name: </strong>" .$name;
+$message .= "<br><strong> Message: </strong>" .$text;
+$message .= "<br><strong> Email: </strong>" .$email;
+$message .= "<br><strong> Phone: </strong>" .$phone
 .$_POST['message'];
 
 //codification / headers
 
-$headers = "Contet-Type:text/html; charset=UTF-8\n";
+$headers = "Content-Type:text/html; charset=UTF-8\n";
 $headers .= "from: yoursite.com.br\n";
 $headers .= "X-Sender: <$email>\n";
 $headers .= "X-Mailer: PHP  v".phpversion()."\n";

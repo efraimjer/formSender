@@ -69,7 +69,7 @@
             <input type="text" class="form-input" id="email" name="email" placeholder="Your Email"><br>
             <input type="text" class="form-input" id="phone" name="phone" placeholder="Your phone"><br>
             <textarea class="form-input" id="mssg" name="mssg" placeholder="Your Message" rows="10" cols="22"></textarea><br>
-            <button id="submit" type="submit" name="submit" value="Send" onclick="SubmitFormData()">Send</button>
+            <button id="submit" type="button" onclick="SubmitFormData()">Send</button>
 
 
         </form>
@@ -90,20 +90,14 @@
 
             //send the message using php
             $.post("sender.php", {name: name, email:email, phone:phone, mssg:mssg},
+
             function(data){
 
                 //returns an error or sucess message
-                
-                if(error){                    
-                    $('#response').html("Failed to deliver your message!<br>Try Again Later.");
-                    $('#response').addClass("error");
-                }
-                else{
-                    $('#response').html("Message sent successufully!<br>Thank You ;)!");
-                    $('#response').addClass("success");
-                }
 
-                $('#myForm')[0].reset();
+                $('#response').html("Message sent successufully!<br>Thank You!");
+                $('#response').addClass("success");  
+                $('#myForm')[0].reset(); //return the form to its initial state
             })
 
 
